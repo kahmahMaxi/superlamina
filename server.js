@@ -44,7 +44,7 @@ let connectedUsers = 0
 
 io.on('connection', (socket) => {
     // Increment the counter when a user connects
-    connectedUsers++;
+    // connectedUsers++;
     // console.log(`user connected: ${socket.id}`)
     // console.log(`Total connected users: ${connectedUsers}`)
 
@@ -65,12 +65,12 @@ io.on('connection', (socket) => {
     })
 
      // Listen for the "disconnect" event to decrement the counter
-     socket.on('disconnect', () => {
-        connectedUsers--;
+     // socket.on('disconnect', () => {
+        // connectedUsers--;
         // console.log(`User disconnected: ${socket.id}`);
         // console.log(`Total connected users: ${connectedUsers}`);
-        socket.broadcast.emit('send_connected_users', connectedUsers)
-    });
+        // socket.broadcast.emit('send_connected_users', connectedUsers)
+    // });
 })
 
 
