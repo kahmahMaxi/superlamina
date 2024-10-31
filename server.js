@@ -46,7 +46,7 @@ io.on('connection', (socket) => {
     // Listen for the "connect" event to increment the counter
      socket.on('send_connected_users', () => {
         connectedUsers++;
-        socket.broadcast.emit('receive_connected_users', connectedUser)
+        socket.broadcast.emit('receive_connected_users', connectedUsers)
         // console.log(`Total connected users: ${connectedUsers}`)
     });
 
