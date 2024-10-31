@@ -3,9 +3,9 @@ const AgencyChat = require('./../model/agencychat')
 
 // get global chats for anyone accessing the page
 const getAgencyChats = async (req, res) => {
-    const { agencyname } = req.body
+    const { id } = req.params
 
-    const agencychats = await AgencyChat.find({ agencyname }).sort({ createdAt: -1 })
+    const agencychats = await AgencyChat.find({ agencyname: id }).sort({ createdAt: -1 })
     const sortedChats = agencychats.reverse(); // This will show the latest messages from top to bottom
     
     res.status(200).json(sortedChats)
