@@ -16,18 +16,9 @@ const sendAgencyChat = async (req, res) => {
     const user_id = req.users._id
     const { username, agencyname, time, colorCode, content, } = req.body
 
-    console.log(content)
-    res.status(200).json(content)
+    const agencychat = await AgencyChat.create({ userid: user_id, username, agencyname, time, label: 'chat', colorCode, content })
 
-    // if(content) {
-    //     console.log(content)
-    //     const agencychat = await AgencyChat.create({ userid: user_id, username, agencyname, time, label: 'chat', colorCode, content })
-    // } else {
-    //     console.log('no content')
-    // }
-
-    
-    // res.status(200).json(agencychat)
+    res.status(200).json(agencychat)
 }
 
 
