@@ -63,7 +63,7 @@ io.on('connection', (socket) => {
     })
 
     socket.on('send_agency_message', (data) =>  {
-        socket.to(data.agencyname).emit('receive_agency_message', data)
+        socket.to(data.itemagency).emit('receive_agency_message', data.itemupdate)
     })
 
      // Listen for the "disconnect" event to decrement the counter
