@@ -41,7 +41,7 @@ router.post('/sendglobalchat', sendGlobalChats)
 router.post('/sendagencychat', sendAgencyChat)
 
 // send a global chat
-router.get('/getagencychat', getAgencyChats)
+router.get('/getagencychat/:id', getAgencyChats)
 
 
 
